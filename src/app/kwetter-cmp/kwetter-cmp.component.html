@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Login</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password">
+      </div>
+
+      <button (click)="onLogin(name, password)">Login</button>
+
+    </form>
+</div>

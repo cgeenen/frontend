@@ -1,0 +1,58 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+      Welcome {{title}}! :)
+    </h1>
+    <ul class='nav navbar-nav' style="list-style: none">
+        <li style="display: inline-block;" [routerLinkActive]="['link-active']">
+            <a [routerLink]="['/home']">
+            Home
+            </a>
+        </li>
+         <li style="display: inline-block;" [routerLinkActive]="['link-active']">
+             <a [routerLink]="['/profile']">
+             Profile
+             </a>
+         </li>
+         <li style="float: right;" [routerLinkActive]="['link-active']">
+                 <button (click)="onLogout()">Logout</button>       
+         </li>
+     </ul>
+ </div>
+<div style="width: 70%; margin: auto;" >
+<div style="float:left; clear:left;">
+    <h3>Profile</h3>
+    <ul style="list-style: none">
+    <li><img src="{{photo}}">   Name: {{name}}</li>
+
+  </ul>
+</div>
+<div style="float:right; clear: right">
+  <ul>
+    <li>{{name}}</li>
+    <li>{{city}}</li>
+    <li>{{url}}</li>
+    <li>{{bio}}</li>
+  </ul>  
+</div>
+<div style="float:left; clear:left;">
+  <ul>
+      <li *ngFor="let tweet of tweets">
+          {{ tweet.tweet }}<br />
+          placed on: {{tweet.placedon}}
+      </li>
+  </ul>
+</div>
+<div style="float:right; clear: right">
+  following {{following.length}}<br />
+  followers {{followers.length}}<br />
+  tweets {{tweets.length}}
+</div>
+<div style="float:right; clear: right">
+    <ul>
+        <li *ngFor="let account of following">
+            {{ account.name }}
+        </li>
+    </ul>
+</div>
+</div>
